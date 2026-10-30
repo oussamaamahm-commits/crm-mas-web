@@ -1,0 +1,23 @@
+[Unit]
+Description=Web Pulsar Business Control Center
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=webpulsar
+Group=webpulsar
+WorkingDirectory=/opt/web-pulsar/app
+Environment=NODE_ENV=production
+ExecStart=/usr/bin/node --disable-warning=ExperimentalWarning server/src/index.js
+Restart=always
+RestartSec=5
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+ReadWritePaths=/opt/web-pulsar/app/data
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

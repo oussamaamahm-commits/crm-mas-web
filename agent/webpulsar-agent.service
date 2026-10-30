@@ -1,0 +1,21 @@
+[Unit]
+Description=Web Pulsar monitoring agent
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+EnvironmentFile=/etc/webpulsar-agent.env
+ExecStart=/usr/bin/env node /opt/webpulsar-agent/pulsar-agent.mjs
+Restart=always
+RestartSec=15
+DynamicUser=yes
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+ProtectKernelTunables=yes
+ProtectControlGroups=yes
+RestrictAddressFamilies=AF_INET AF_INET6
+
+[Install]
+WantedBy=multi-user.target

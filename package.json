@@ -1,0 +1,25 @@
+{
+  "name": "web-pulsar",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Web Pulsar Business Control Center — CRM/ERP interno de Web Pulsar",
+  "type": "module",
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "setup": "npm run setup -w server",
+    "dev": "node scripts/dev.js",
+    "build": "npm run build -w web",
+    "start": "npm run start -w server",
+    "migrate": "npm run migrate -w server",
+    "user:create": "npm run user:create -w server --",
+    "seed:demo": "npm run seed:demo -w server",
+    "backup": "npm run backup -w server",
+    "test": "npm test -w server"
+  }
+}
