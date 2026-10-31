@@ -4,3 +4,8 @@ data/
 web/dist/
 *.log
 .DS_Store
+
+site/dist/
+.env.local
+site/.env*
+!site/.env.example
