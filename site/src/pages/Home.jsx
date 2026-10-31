@@ -4,6 +4,7 @@ import Services from '../sections/Services.jsx';
 import Portfolio from '../sections/Portfolio.jsx';
 import VoiceSection from '../sections/VoiceSection.jsx';
 import Process from '../sections/Process.jsx';
+import Plans from '../sections/Plans.jsx';
 import Pricing from '../sections/Pricing.jsx';
 import { FaqSection, FinalCTA, ContactSection } from '../sections/Closing.jsx';
 import { useSeo } from '../hooks/useSeo.js';
@@ -22,6 +23,7 @@ export default function Home() {
       <Portfolio />
       <VoiceSection />
       <Process />
+      <Plans />
       <Pricing />
       <FaqSection />
       <FinalCTA />

@@ -9,6 +9,7 @@ export const NAV_LINKS = [
   { label: 'Soluciones', to: '/#soluciones' },
   { label: 'Proyectos', to: '/#proyectos' },
   { label: 'Cómo trabajamos', to: '/#proceso' },
+  { label: 'Precios', to: '/#precios' },
   { label: 'Contacto', to: '/#contacto' },
 ];
 
