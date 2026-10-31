@@ -39,6 +39,10 @@ export const config = {
     secure: isProd || env.COOKIE_SECURE === '1',
   },
   schedulerEnabled: env.SCHEDULER_ENABLED !== '0',
+  publicForms: {
+    origins: (env.PUBLIC_FORM_ORIGINS || '').split(',').map((o) => o.trim().replace(/\/$/, '')).filter(Boolean),
+    turnstileSecret: env.TURNSTILE_SECRET_KEY || null,
+  },
   backups: { keep: Number(env.BACKUP_KEEP || 14), hour: Number(env.BACKUP_HOUR || 3) },
   envSecrets: {
     hostinger: env.HOSTINGER_API_TOKEN || null,

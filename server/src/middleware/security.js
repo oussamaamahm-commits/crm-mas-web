@@ -47,6 +47,14 @@ export const sensitiveLimiter = rateLimit({
   handler: json('Demasiados intentos. Espera unos minutos.'),
 });
 
+export const publicFormLimiter = rateLimit({
+  windowMs: 15 * 60_000,
+  limit: 5,
+  standardHeaders: 'draft-7',
+  legacyHeaders: false,
+  handler: json('Has enviado demasiadas solicitudes. Inténtalo de nuevo más tarde.'),
+});
+
 export const agentLimiter = rateLimit({
   windowMs: 60_000,
   limit: 30,
